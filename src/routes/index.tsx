@@ -339,6 +339,33 @@ function Keepsake() {
         </div>
       </section>
 
+      {/* THE CLIP */}
+      <section className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+        <Reveal>
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-amber">
+            (c·2) Moving picture
+          </p>
+          <h2 className="mt-4 font-display text-5xl uppercase tracking-tight text-balance sm:text-6xl">
+            One little clip
+          </h2>
+        </Reveal>
+        <Reveal delay={120}>
+          <div className="mt-8 rounded-[min(1.4vw,18px)] border border-ink/15 bg-cream2/60 p-3">
+            <video
+              src={ourClip.url}
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full rounded-[min(1vw,12px)] bg-ink/5"
+            />
+            <p className="mt-3 text-center font-serif text-sm italic text-ink/70">
+              press play — you know exactly which night this was
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+
       {/* LOVE NOTES */}
       <section className="border-y border-ink/10 bg-cream2/40">
         <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
