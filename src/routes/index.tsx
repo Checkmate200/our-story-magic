@@ -10,25 +10,25 @@ import himExpo from "@/assets/him-expo.jpeg.asset.json";
 import ourClip from "@/assets/our-clip.mp4.asset.json";
 
 /**
- * The day it all began. One year later = the anniversary being celebrated.
+ * The day it all began. Two years later = the anniversary being celebrated.
  * Update this date (and the copy below) to personalise the keepsake.
  */
-const START_DATE = new Date("2025-08-30T00:00:00");
+const START_DATE = new Date("2024-08-30T00:00:00");
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "One Whole Year — You & Me" },
+      { title: "Two Whole Years — You & Me" },
       {
         name: "description",
         content:
-          "A keepsake of our first year together — golden light, long dinners, and the small ordinary that turned into everything.",
+          "A keepsake of our two years together — golden light, long dinners, and the small ordinary that turned into everything.",
       },
-      { property: "og:title", content: "One Whole Year — You & Me" },
+      { property: "og:title", content: "Two Whole Years — You & Me" },
       {
         property: "og:description",
         content:
-          "A keepsake of our first year together — golden light, long dinners, and the small ordinary that turned into everything.",
+          "A keepsake of our two years together — golden light, long dinners, and the small ordinary that turned into everything.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -145,7 +145,7 @@ const frames = [
 
 const notes = [
   '"You make even a quiet Tuesday feel like the coast at golden hour."',
-  '"A year is only the beginning of all the ordinary we\'ll keep."',
+  '"Two years is only the beginning of all the ordinary we\'ll keep."',
   '"Wherever the road goes, I\'ll be the one beside you in it."',
 ];
 
@@ -173,7 +173,7 @@ function Keepsake() {
                 />
                 <div className="relative">
                   <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-azure">
-                    One Year — together
+                    Two Years — together
                   </p>
                   <p className="mt-4 font-serif text-xl italic leading-snug text-ink/80">
                     A Riviera
@@ -194,16 +194,16 @@ function Keepsake() {
               </Reveal>
               <Reveal as="h1" delay={180}>
                 <span className="mt-3 block font-display text-[clamp(3.2rem,9vw,7rem)] uppercase leading-[0.92] tracking-tight text-ink text-balance">
-                  One
+                  Two
                   <br />
                   Whole
                   <br />
-                  Year
+                  Years
                 </span>
               </Reveal>
               <Reveal as="p" className="mt-5 max-w-[36ch] text-sm text-ink/70 text-pretty" delay={260}>
-                365 days of golden light, long dinners, and the small ordinary that turns into
-                everything. A keepsake of our first year on the coast.
+                730 days of golden light, long dinners, and the small ordinary that turns into
+                everything. A keepsake of our first two years on the coast.
               </Reveal>
               <Reveal delay={340}>
                 <a
@@ -256,7 +256,7 @@ function Keepsake() {
               (a) Our story
             </p>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-balance sm:text-5xl">
-              A year, pressed flat like a flower between pages.
+              Two years, pressed flat like a flower between pages.
             </h2>
           </Reveal>
           <Reveal className="md:col-span-6 md:col-start-7 text-pretty">
@@ -266,8 +266,8 @@ function Keepsake() {
               language of each other.
             </p>
             <p className="mt-4 leading-relaxed text-ink/75">
-              Twelve months later, every ordinary day carries a little of the light it first had.
-              This is what a whole year looks like, kept carefully.
+              Twenty-four months later, every ordinary day carries a little of the light it first
+              had. This is what two whole years look like, kept carefully.
             </p>
             <p className="mt-6 font-serif text-lg italic text-rose">— yours, always</p>
           </Reveal>
@@ -402,7 +402,7 @@ function Keepsake() {
               <p className="mt-6 font-display text-5xl uppercase tracking-tight text-balance sm:text-6xl">
                 Happy
                 <br />
-                one year
+                two years
               </p>
               <p className="mt-6 font-serif text-xl italic text-ink/80 text-balance">
                 Here's to the next season of the same light, the same sea, and you.
