@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import frameCoffee from "@/assets/frame-coffee.png";
-import frameDinner from "@/assets/frame-dinner.png";
-import frameCoast from "@/assets/frame-coast.png";
+import dessertAsk from "@/assets/dessert-ask.jpeg.asset.json";
+import usHome from "@/assets/us-home.jpeg.asset.json";
+import balloons from "@/assets/balloons.jpeg.asset.json";
+import expoBoat from "@/assets/expo-boat.jpeg.asset.json";
+import expoKeta from "@/assets/expo-keta.jpeg.asset.json";
+import himExpo from "@/assets/him-expo.jpeg.asset.json";
+import ourClip from "@/assets/our-clip.mp4.asset.json";
 
 /**
  * The day it all began. One year later = the anniversary being celebrated.
