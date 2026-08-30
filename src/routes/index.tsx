@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import frameCoffee from "@/assets/frame-coffee.png";
-import frameDinner from "@/assets/frame-dinner.png";
-import frameCoast from "@/assets/frame-coast.png";
+import dessertAsk from "@/assets/dessert-ask.jpeg.asset.json";
+import usHome from "@/assets/us-home.jpeg.asset.json";
+import balloons from "@/assets/balloons.jpeg.asset.json";
+import expoBoat from "@/assets/expo-boat.jpeg.asset.json";
+import expoKeta from "@/assets/expo-keta.jpeg.asset.json";
+import himExpo from "@/assets/him-expo.jpeg.asset.json";
+import ourClip from "@/assets/our-clip.mp4.asset.json";
 
 /**
  * The day it all began. One year later = the anniversary being celebrated.
@@ -105,35 +109,38 @@ function snapshot(start: Date): TimeUnit[] {
 
 const milestones = [
   {
-    when: "August · How we met",
-    title: "The first hello",
-    body: "A crowded terrace, a shared table, and a conversation that refused to end before the café closed.",
+    when: "October 2024 · The first date",
+    title: "Astra Lumina",
+    body: '"Dress warm — I want to take you to an outdoor event." A Saturday night under the lights. It turned out nicely.',
     dot: "bg-amber",
   },
   {
-    when: "September · First date",
-    title: "Dinner by the water",
-    body: "We split one dessert, lost track of the time, and walked home along the lit-up shore.",
-    dot: "bg-rose",
-  },
-  {
-    when: "November · First trip",
-    title: "The coastal road",
-    body: "One borrowed car, a playlist on shuffle, and a cliffside town we'd never planned to find.",
+    when: "November 2024 · His world",
+    title: "The marine career expo",
+    body: "Boats, badges and lanyards — the internship that had him on the water, and me right there beside him.",
     dot: "bg-azure",
   },
   {
-    when: "Every day · The small stuff",
-    title: "Our inside jokes",
-    body: 'The 10:04 text, the burnt-toast ritual, the way we say "again" and mean "forever."',
+    when: "The question",
+    title: '"Will you be my girlfriend?"',
+    body: "Written in chocolate on a plate of doughnuts, with a strawberry and a little purple flower. The easiest yes.",
+    dot: "bg-rose",
+  },
+  {
+    when: "Since then · The small stuff",
+    title: "Balloons, couches and water bottles",
+    body: "Sunrise fields full of hot air balloons, quiet afternoons at home, and a hundred ordinary days we kept anyway.",
     dot: "bg-ochre",
   },
 ];
 
 const frames = [
-  { src: frameCoffee, caption: "the first slow morning", date: "30 · August", rotate: "-rotate-3" },
-  { src: frameDinner, caption: "dinner that never ended", date: "— · September", rotate: "rotate-2" },
-  { src: frameCoast, caption: "the road we didn't plan", date: "— · November", rotate: "-rotate-1" },
+  { src: dessertAsk.url, caption: "will you be my girlfriend?", date: "the question", rotate: "-rotate-3" },
+  { src: balloons.url, caption: "hot air balloons at sunrise", date: "the balloon field", rotate: "rotate-2" },
+  { src: expoBoat.url, caption: "at the helm together", date: "November 2024", rotate: "-rotate-2" },
+  { src: usHome.url, caption: "an ordinary afternoon", date: "just us", rotate: "rotate-1" },
+  { src: himExpo.url, caption: "him, at the expo", date: "November 2024", rotate: "-rotate-1" },
+  { src: expoKeta.url, caption: "me, by the KETA", date: "November 2024", rotate: "rotate-3" },
 ];
 
 const notes = [
@@ -331,6 +338,33 @@ function Keepsake() {
           ))}
         </div>
       </section>
+
+      {/* THE CLIP */}
+      <section className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+        <Reveal>
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-amber">
+            (c·2) Moving picture
+          </p>
+          <h2 className="mt-4 font-display text-5xl uppercase tracking-tight text-balance sm:text-6xl">
+            One little clip
+          </h2>
+        </Reveal>
+        <Reveal delay={120}>
+          <div className="mt-8 rounded-[min(1.4vw,18px)] border border-ink/15 bg-cream2/60 p-3">
+            <video
+              src={ourClip.url}
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full rounded-[min(1vw,12px)] bg-ink/5"
+            />
+            <p className="mt-3 text-center font-serif text-sm italic text-ink/70">
+              press play — you know exactly which night this was
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
 
       {/* LOVE NOTES */}
       <section className="border-y border-ink/10 bg-cream2/40">
