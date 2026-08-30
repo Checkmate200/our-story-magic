@@ -61,6 +61,22 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ---- Golden Hour Riviera tokens (anniversary keepsake) ---- */
+@theme {
+  --color-cream: #f4ead8;
+  --color-cream2: #ebdcc0;
+  --color-ink: #33291f;
+  --color-amber: #a97124;
+  --color-ochre: #c98a32;
+  --color-rose: #b5766c;
+  --color-azure: #345c6a;
+
+  --font-display: "Anton", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -140,5 +156,63 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
+}
+
+/* ---- Keepsake motion ---- */
+@keyframes keepsake-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes keepsake-petal {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(28px, 140px) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+@keyframes keepsake-tick {
+  from {
+    opacity: 0.2;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+}
+
+@utility reveal-in {
+  animation: keepsake-rise 700ms cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+@utility keepsake-petal {
+  animation: keepsake-petal 16s linear infinite;
+}
+
+@utility keepsake-tick {
+  animation: keepsake-tick 900ms cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+html {
+  scroll-behavior: smooth;
 }
