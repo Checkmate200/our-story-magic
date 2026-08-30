@@ -109,35 +109,38 @@ function snapshot(start: Date): TimeUnit[] {
 
 const milestones = [
   {
-    when: "August · How we met",
-    title: "The first hello",
-    body: "A crowded terrace, a shared table, and a conversation that refused to end before the café closed.",
+    when: "October 2024 · The first date",
+    title: "Astra Lumina",
+    body: '"Dress warm — I want to take you to an outdoor event." A Saturday night under the lights. It turned out nicely.',
     dot: "bg-amber",
   },
   {
-    when: "September · First date",
-    title: "Dinner by the water",
-    body: "We split one dessert, lost track of the time, and walked home along the lit-up shore.",
-    dot: "bg-rose",
-  },
-  {
-    when: "November · First trip",
-    title: "The coastal road",
-    body: "One borrowed car, a playlist on shuffle, and a cliffside town we'd never planned to find.",
+    when: "November 2024 · His world",
+    title: "The marine career expo",
+    body: "Boats, badges and lanyards — the internship that had him on the water, and me right there beside him.",
     dot: "bg-azure",
   },
   {
-    when: "Every day · The small stuff",
-    title: "Our inside jokes",
-    body: 'The 10:04 text, the burnt-toast ritual, the way we say "again" and mean "forever."',
+    when: "The question",
+    title: '"Will you be my girlfriend?"',
+    body: "Written in chocolate on a plate of doughnuts, with a strawberry and a little purple flower. The easiest yes.",
+    dot: "bg-rose",
+  },
+  {
+    when: "Since then · The small stuff",
+    title: "Balloons, couches and water bottles",
+    body: "Sunrise fields full of hot air balloons, quiet afternoons at home, and a hundred ordinary days we kept anyway.",
     dot: "bg-ochre",
   },
 ];
 
 const frames = [
-  { src: frameCoffee, caption: "the first slow morning", date: "30 · August", rotate: "-rotate-3" },
-  { src: frameDinner, caption: "dinner that never ended", date: "— · September", rotate: "rotate-2" },
-  { src: frameCoast, caption: "the road we didn't plan", date: "— · November", rotate: "-rotate-1" },
+  { src: dessertAsk.url, caption: "will you be my girlfriend?", date: "the question", rotate: "-rotate-3" },
+  { src: balloons.url, caption: "hot air balloons at sunrise", date: "the balloon field", rotate: "rotate-2" },
+  { src: expoBoat.url, caption: "at the helm together", date: "November 2024", rotate: "-rotate-2" },
+  { src: usHome.url, caption: "an ordinary afternoon", date: "just us", rotate: "rotate-1" },
+  { src: himExpo.url, caption: "him, at the expo", date: "November 2024", rotate: "-rotate-1" },
+  { src: expoKeta.url, caption: "me, by the KETA", date: "November 2024", rotate: "rotate-3" },
 ];
 
 const notes = [
