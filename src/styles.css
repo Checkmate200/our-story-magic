@@ -333,3 +333,45 @@ html {
   scroll-behavior: smooth;
 }
 
+
+/* ---- Page-wide love ---- */
+@keyframes love-float {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.7) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  90% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-115vh) translateX(40px) scale(1.15) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes love-beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.14);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+}
+
+@utility love-float {
+  animation: love-float 22s linear infinite;
+}
+
+@utility love-beat {
+  animation: love-beat 1.8s ease-in-out infinite;
+}

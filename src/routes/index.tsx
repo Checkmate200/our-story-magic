@@ -170,11 +170,47 @@ const notes = [
   '"Wherever the road goes, I\'ll be the one beside you in it."',
 ];
 
+/** Soft hearts drifting up behind the whole page. */
+function LoveField() {
+  const hearts = Array.from({ length: 16 }, (_, i) => ({
+    left: (i * 6.7 + 3) % 100,
+    delay: (i * 1.7) % 22,
+    duration: 18 + (i % 5) * 3,
+    size: 10 + (i % 4) * 5,
+    tone: ["text-rose/45", "text-amber/40", "text-ochre/35", "text-rose/30"][i % 4],
+  }));
+
+  return (
+    <div
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      aria-hidden="true"
+    >
+      {hearts.map((h, i) => (
+        <span
+          key={i}
+          className={`love-float absolute bottom-[-8vh] ${h.tone}`}
+          style={{
+            left: `${h.left}%`,
+            fontSize: `${h.size}px`,
+            animationDelay: `${h.delay}s`,
+            animationDuration: `${h.duration}s`,
+          }}
+        >
+          ♥
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function Keepsake() {
   const timeUnits = useTimeTogether();
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-cream font-body text-ink selection:bg-amber/30">
+    <div className="relative min-h-screen overflow-x-hidden bg-cream font-body text-ink selection:bg-amber/30">
+      <LoveField />
+      <div className="relative z-10">
+
       {/* HERO — Riviera travel poster label panel */}
       <header className="relative bg-cream">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -453,16 +489,31 @@ function Keepsake() {
                 two years
               </p>
               <p className="mt-6 font-serif text-xl italic text-ink/80 text-balance">
-                Here's to the next season of the same light, the same sea, and you.
+                Here&apos;s to the next season of the same light, the same sea, and you, Denis.
               </p>
               <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-                You & Me · 30 August
+                Denis &amp; Elizeba · 30 August
               </p>
             </div>
           </div>
         </Reveal>
       </section>
+
+      {/* SIGNATURE */}
+      <footer className="border-t border-ink/10 bg-cream2/40">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-6 py-10 text-center">
+          <span className="love-beat text-rose text-lg">♥</span>
+          <p className="font-serif text-lg italic text-ink/75">
+            Made with love by lovely Elizeba — for Denis
+          </p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink/45">
+            Two years · 30 August
+          </p>
+        </div>
+      </footer>
+      </div>
     </div>
+
   );
 }
 
