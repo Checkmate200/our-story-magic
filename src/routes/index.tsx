@@ -489,16 +489,31 @@ function Keepsake() {
                 two years
               </p>
               <p className="mt-6 font-serif text-xl italic text-ink/80 text-balance">
-                Here's to the next season of the same light, the same sea, and you.
+                Here&apos;s to the next season of the same light, the same sea, and you, Denis.
               </p>
               <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-                You & Me · 30 August
+                Denis &amp; Elizeba · 30 August
               </p>
             </div>
           </div>
         </Reveal>
       </section>
+
+      {/* SIGNATURE */}
+      <footer className="border-t border-ink/10 bg-cream2/40">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-6 py-10 text-center">
+          <span className="love-beat text-rose text-lg">♥</span>
+          <p className="font-serif text-lg italic text-ink/75">
+            Made with love by lovely Elizeba — for Denis
+          </p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink/45">
+            Two years · 30 August
+          </p>
+        </div>
+      </footer>
+      </div>
     </div>
+
   );
 }
 
