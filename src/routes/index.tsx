@@ -141,12 +141,18 @@ const milestones = [
 ];
 
 const frames = [
+  { src: astraLumina.url, caption: "Astra Lumina, first date", date: "10 · 24 · '24", rotate: "-rotate-2" },
   { src: dessertAsk.url, caption: "will you be my girlfriend?", date: "the question", rotate: "-rotate-3" },
   { src: balloons.url, caption: "hot air balloons at sunrise", date: "the balloon field", rotate: "rotate-2" },
   { src: expoBoat.url, caption: "at the helm together", date: "November 2024", rotate: "-rotate-2" },
-  { src: usHome.url, caption: "an ordinary afternoon", date: "just us", rotate: "rotate-1" },
+  { src: expo24Sign.url, caption: "#EXPO24", date: "November 2024", rotate: "rotate-2" },
   { src: himExpo.url, caption: "him, at the expo", date: "November 2024", rotate: "-rotate-1" },
   { src: expoKeta.url, caption: "me, by the KETA", date: "November 2024", rotate: "rotate-3" },
+  { src: museumHug.url, caption: "under the old aeroplane", date: "museum day", rotate: "-rotate-1" },
+  { src: usHome.url, caption: "an ordinary afternoon", date: "just us", rotate: "rotate-1" },
+  { src: paintNight.url, caption: "two sunsets, two brushes", date: "paint night", rotate: "-rotate-3" },
+  { src: teamBride.url, caption: "team bride duty", date: "the wedding season", rotate: "rotate-2" },
+  { src: sunsetKenya.url, caption: "golden hour by the water", date: "our kind of sunset", rotate: "-rotate-2" },
 ];
 
 const notes = [
