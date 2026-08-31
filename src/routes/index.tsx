@@ -434,3 +434,162 @@ function Keepsake() {
     </div>
   );
 }
+
+/* ---------- Treasure hunt: a small game hidden in the keepsake ---------- */
+
+type Spot = {
+  icon: string;
+  clue: string;
+  where: string;
+};
+
+const spots: Spot[] = [
+  { icon: "✦", clue: "Dress warm — I want to take you to an outdoor event.", where: "Astra Lumina, October 2024" },
+  { icon: "⚓", clue: "Boats, badges and lanyards. #EXPO24.", where: "the marine expo, November 2024" },
+  { icon: "🍩", clue: "Written in chocolate, with a strawberry and a tiny purple flower.", where: "the easiest yes" },
+  { icon: "🎨", clue: "Two brushes, two sunsets, one very blue apron.", where: "paint night" },
+  { icon: "🎈", clue: "A field of hot air balloons before the sun was properly up.", where: "the balloon field" },
+  { icon: "🌅", clue: "Golden hour by the water — the one that looks like a postcard.", where: "our kind of sunset" },
+];
+
+const decoys = ["🐚", "🪸", "🧭", "🕯️", "🌊", "🍓"];
+
+function TreasureHunt() {
+  const [found, setFound] = useState<number[]>([]);
+  const [opened, setOpened] = useState<number | null>(null);
+  const [missed, setMissed] = useState<number | null>(null);
+
+  // Six real clues + six decoys, shuffled once per visit.
+  const [tiles] = useState(() => {
+    const real = spots.map((s, i) => ({ kind: "clue" as const, index: i, icon: s.icon }));
+    const fake = decoys.map((d, i) => ({ kind: "sand" as const, index: 100 + i, icon: d }));
+    const all = [...real, ...fake];
+    for (let i = all.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [all[i], all[j]] = [all[j]!, all[i]!];
+    }
+    return all;
+  });
+
+  const complete = found.length === spots.length;
+
+  return (
+    <section id="hunt" className="relative overflow-hidden border-y border-ink/10 bg-cream2/40">
+      {complete && (
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          {Array.from({ length: 18 }).map((_, i) => (
+            <span
+              key={i}
+              className={`hunt-confetti absolute top-0 size-2 rounded-full ${
+                ["bg-amber", "bg-rose", "bg-azure", "bg-ochre"][i % 4]
+              }`}
+              style={{ left: `${(i * 5.5 + 4) % 100}%`, animationDelay: `${(i % 6) * 0.35}s` }}
+            />
+          ))}
+        </div>
+      )}
+
+      <div className="relative mx-auto max-w-5xl px-6 py-16 sm:py-24">
+        <Reveal>
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-amber">
+            (c·3) Anniversary surprise
+          </p>
+          <h2 className="mt-4 font-display text-5xl uppercase tracking-tight text-balance sm:text-6xl">
+            The treasure hunt
+          </h2>
+          <p className="mt-4 max-w-[46ch] text-sm text-ink/70 text-pretty">
+            Six of our memories are buried in the sand below. Dig them all up and something opens at
+            the end. (Yes, there are decoys. Yes, it&apos;s on purpose.)
+          </p>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <div className="mt-6 flex items-center gap-3">
+            <div className="h-1.5 w-40 overflow-hidden rounded-full bg-ink/10">
+              <span
+                className="block h-full rounded-full bg-amber transition-all duration-700"
+                style={{ width: `${(found.length / spots.length) * 100}%` }}
+              />
+            </div>
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/60">
+              {found.length} / {spots.length} found
+            </span>
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
+          {tiles.map((t, i) => {
+            const isFound = t.kind === "clue" && found.includes(t.index);
+            return (
+              <button
+                key={`${t.kind}-${t.index}`}
+                type="button"
+                aria-label={isFound ? "memory found" : "dig here"}
+                onClick={() => {
+                  if (t.kind === "clue") {
+                    setFound((f) => (f.includes(t.index) ? f : [...f, t.index]));
+                    setOpened(t.index);
+                    setMissed(null);
+                  } else {
+                    setMissed(i);
+                    setOpened(null);
+                    window.setTimeout(() => setMissed((m) => (m === i ? null : m)), 400);
+                  }
+                }}
+                className={`aspect-square rounded-[min(1vw,12px)] border text-2xl transition-all duration-300 ${
+                  isFound
+                    ? "border-amber/60 bg-amber/15 hunt-pop"
+                    : "border-ink/15 bg-cream hover:-translate-y-1 hover:border-amber/50"
+                } ${missed === i ? "hunt-shake" : ""}`}
+              >
+                <span className={isFound ? "" : "hunt-bob inline-block opacity-45 grayscale"}>
+                  {isFound ? t.icon : "⛱"}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-6 min-h-24">
+          {opened !== null && !complete && (
+            <div key={opened} className="hunt-pop rounded-[min(1.4vw,18px)] border border-ink/15 bg-cream p-6">
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-azure">
+                {spots[opened]!.where}
+              </p>
+              <p className="mt-2 font-serif text-xl italic text-ink/85 text-pretty">
+                {spots[opened]!.clue}
+              </p>
+            </div>
+          )}
+          {missed !== null && (
+            <p className="font-serif text-lg italic text-ink/50">just sand. keep digging…</p>
+          )}
+          {complete && (
+            <div className="hunt-pop hunt-glow rounded-[min(2vw,24px)] border border-amber/50 bg-cream p-8 text-center">
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-amber">
+                Treasure unlocked
+              </p>
+              <p className="mt-4 font-display text-4xl uppercase tracking-tight text-balance sm:text-5xl">
+                You found all of us
+              </p>
+              <p className="mt-4 font-serif text-xl italic text-ink/80 text-balance">
+                Two years, six treasures, and a whole map still left to dig. Happy anniversary, my
+                love.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setFound([]);
+                  setOpened(null);
+                }}
+                className="mt-6 rounded-full border border-ink/20 px-5 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/70 transition-colors hover:border-amber hover:text-amber"
+              >
+                Bury it again
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
