@@ -7,7 +7,13 @@ import balloons from "@/assets/balloons.jpeg.asset.json";
 import expoBoat from "@/assets/expo-boat.jpeg.asset.json";
 import expoKeta from "@/assets/expo-keta.jpeg.asset.json";
 import himExpo from "@/assets/him-expo.jpeg.asset.json";
-import ourClip from "@/assets/our-clip.mp4.asset.json";
+import astraLumina from "@/assets/astra-lumina.jpeg.asset.json";
+import expo24Sign from "@/assets/expo24-sign.jpeg.asset.json";
+import museumHug from "@/assets/museum-hug.jpeg.asset.json";
+import sunsetKenya from "@/assets/sunset-kenya.jpeg.asset.json";
+import paintNight from "@/assets/paint-night.jpeg.asset.json";
+import teamBride from "@/assets/team-bride.jpeg.asset.json";
+import storyClip from "@/assets/story-clip.mp4.asset.json";
 
 /**
  * The day it all began. Two years later = the anniversary being celebrated.
