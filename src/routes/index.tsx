@@ -153,7 +153,12 @@ const frames = [
   { src: paintNight.url, caption: "two sunsets, two brushes", date: "paint night", rotate: "-rotate-3" },
   { src: teamBride.url, caption: "team bride duty", date: "the wedding season", rotate: "rotate-2" },
   { src: sunsetKenya.url, caption: "golden hour by the water", date: "our kind of sunset", rotate: "-rotate-2" },
+  { src: dinnerView.url, caption: "dinner above the city", date: "the view table", rotate: "rotate-2" },
+  { src: redDressKiss.url, caption: "a kiss in the mirror", date: "the red dress night", rotate: "-rotate-1" },
+  { src: deceptionPass.url, caption: "us at the bridge", date: "deception pass", rotate: "rotate-1" },
+  { src: overlookHands.url, caption: "hands up at the overlook", date: "the two-year view", rotate: "-rotate-3" },
 ];
+
 
 const notes = [
   '"You make even a quiet Tuesday feel like the coast at golden hour."',
