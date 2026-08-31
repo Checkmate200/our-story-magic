@@ -507,7 +507,7 @@ function Keepsake() {
             Made with love by lovely Elizeba — for Denis
           </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink/45">
-            Two years · 30 August
+            @ 2026 · Two years · 30 August
           </p>
         </div>
       </footer>
