@@ -296,6 +296,40 @@
   animation: hunt-glow 2.2s ease-out infinite;
 }
 
+/* ---- Love motion around photos ---- */
+@keyframes love-heart {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.1) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes love-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-rose) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+@utility love-heart {
+  animation: love-heart 2.6s ease-out infinite;
+}
+
+@utility love-ring {
+  animation: love-ring 1.8s ease-out infinite;
+}
+
 html {
   scroll-behavior: smooth;
 }
+

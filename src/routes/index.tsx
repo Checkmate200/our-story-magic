@@ -13,6 +13,10 @@ import museumHug from "@/assets/museum-hug.jpeg.asset.json";
 import sunsetKenya from "@/assets/sunset-kenya.jpeg.asset.json";
 import paintNight from "@/assets/paint-night.jpeg.asset.json";
 import teamBride from "@/assets/team-bride.jpeg.asset.json";
+import dinnerView from "@/assets/dinner-view.jpeg.asset.json";
+import redDressKiss from "@/assets/red-dress-kiss.jpeg.asset.json";
+import overlookHands from "@/assets/overlook-hands.jpeg.asset.json";
+import deceptionPass from "@/assets/deception-pass.jpeg.asset.json";
 import storyClip from "@/assets/story-clip.mp4.asset.json";
 
 /**
@@ -153,7 +157,12 @@ const frames = [
   { src: paintNight.url, caption: "two sunsets, two brushes", date: "paint night", rotate: "-rotate-3" },
   { src: teamBride.url, caption: "team bride duty", date: "the wedding season", rotate: "rotate-2" },
   { src: sunsetKenya.url, caption: "golden hour by the water", date: "our kind of sunset", rotate: "-rotate-2" },
+  { src: dinnerView.url, caption: "dinner above the city", date: "the view table", rotate: "rotate-2" },
+  { src: redDressKiss.url, caption: "a kiss in the mirror", date: "the red dress night", rotate: "-rotate-1" },
+  { src: deceptionPass.url, caption: "us at the bridge", date: "deception pass", rotate: "rotate-1" },
+  { src: overlookHands.url, caption: "hands up at the overlook", date: "the two-year view", rotate: "-rotate-3" },
 ];
+
 
 const notes = [
   '"You make even a quiet Tuesday feel like the coast at golden hour."',
@@ -332,8 +341,29 @@ function Keepsake() {
           {frames.map((f, i) => (
             <Reveal as="figure" key={f.src} delay={i * 120}>
               <figure
-                className={`w-44 rounded-[min(1vw,10px)] bg-cream p-3 pb-11 outline-1 -outline-offset-1 outline-black/5 transition-transform duration-500 hover:rotate-0 sm:w-52 ${f.rotate} ${i === 0 ? "" : "-mt-10"}`}
+                className={`group relative w-44 rounded-[min(1vw,10px)] bg-cream p-3 pb-11 outline-1 -outline-offset-1 outline-black/5 transition-transform duration-500 hover:rotate-0 hover:scale-[1.04] sm:w-52 ${f.rotate} ${i === 0 ? "" : "-mt-10"}`}
               >
+                {/* hearts that drift up around the photo on hover */}
+                <span
+                  className="pointer-events-none absolute -inset-6 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                >
+                  {["4%", "26%", "52%", "74%", "92%"].map((left, h) => (
+                    <span
+                      key={left}
+                      className={`love-heart absolute bottom-6 text-lg ${
+                        ["text-rose", "text-amber", "text-ochre"][h % 3]
+                      }`}
+                      style={{ left, animationDelay: `${h * 0.32}s` }}
+                    >
+                      ♥
+                    </span>
+                  ))}
+                </span>
+                <span
+                  className="love-ring pointer-events-none absolute inset-0 rounded-[min(1vw,10px)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
                 <img
                   src={f.src}
                   alt={f.caption}
@@ -347,6 +377,7 @@ function Keepsake() {
                 </figcaption>
               </figure>
             </Reveal>
+
           ))}
         </div>
       </section>
