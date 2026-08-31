@@ -13,6 +13,10 @@ import museumHug from "@/assets/museum-hug.jpeg.asset.json";
 import sunsetKenya from "@/assets/sunset-kenya.jpeg.asset.json";
 import paintNight from "@/assets/paint-night.jpeg.asset.json";
 import teamBride from "@/assets/team-bride.jpeg.asset.json";
+import dinnerView from "@/assets/dinner-view.jpeg.asset.json";
+import redDressKiss from "@/assets/red-dress-kiss.jpeg.asset.json";
+import overlookHands from "@/assets/overlook-hands.jpeg.asset.json";
+import deceptionPass from "@/assets/deception-pass.jpeg.asset.json";
 import storyClip from "@/assets/story-clip.mp4.asset.json";
 
 /**
