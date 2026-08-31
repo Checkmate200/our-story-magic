@@ -358,24 +358,29 @@ function Keepsake() {
             (c·2) Moving picture
           </p>
           <h2 className="mt-4 font-display text-5xl uppercase tracking-tight text-balance sm:text-6xl">
-            One little clip
+            Our whole story
           </h2>
         </Reveal>
         <Reveal delay={120}>
           <div className="mt-8 rounded-[min(1.4vw,18px)] border border-ink/15 bg-cream2/60 p-3">
             <video
-              src={ourClip.url}
+              src={storyClip.url}
               controls
               playsInline
               preload="metadata"
               className="w-full rounded-[min(1vw,12px)] bg-ink/5"
             />
             <p className="mt-3 text-center font-serif text-sm italic text-ink/70">
-              press play — you know exactly which night this was
+              press play — this one says everything
             </p>
           </div>
         </Reveal>
       </section>
+
+      {/* TREASURE HUNT */}
+      <TreasureHunt />
+
+
 
 
       {/* LOVE NOTES */}
